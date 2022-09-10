@@ -48,22 +48,51 @@ let questionArray = [
 ]
 
 // Event Listeners
-document.getElementById('navDirectionsButton').addEventListener('click', testFunction);
-document.getElementById('navPauseButton').addEventListener('click', testFunction);
-document.getElementById('navRestartButton').addEventListener('click', testFunction);
-document.getElementById('closeGameStartModalButton').addEventListener('click', testFunction);
-document.getElementById('closeDirectionsModalButton').addEventListener('click', testFunction);
-document.getElementById('gameEndRestartButton').addEventListener('click', testFunction);
-document.getElementById('correctNextQuestionButton').addEventListener('click', testFunction);
+document.getElementById('navDirectionsButton').addEventListener('click', openNavDirections);
+document.getElementById('navPauseButton').addEventListener('click', pauseGame);
+document.getElementById('navRestartButton').addEventListener('click', restartGame);
+document.getElementById('closeGameStartModalButton').addEventListener('click', closeGameStartModal);
+document.getElementById('closeDirectionsModalButton').addEventListener('click', closeDirectionsModal);
+document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
+document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
+document.getElementById('correctNextQuestionButton').addEventListener('click', generateQuestion);
 document.getElementById('wrongNextQuestionButton').addEventListener('click', generateQuestion);
-document.getElementById('correctAnswer').addEventListener('click', testFunction);
-document.getElementById('wrongAnswer1').addEventListener('click', testFunction);
-document.getElementById('wrongAnswer2').addEventListener('click', testFunction);
-document.getElementById('wrongAnswer3').addEventListener('click', testFunction);
+document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
+document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
+document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
+document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
 
-function testFunction() {
-    console.log("Works")
-    generateQuestion
+function openNavDirections(){
+    console.log("openNavDirections")
+
+}
+function pauseGame(){
+    console.log("pauseGame")
+
+}
+function restartGame(){
+    console.log("restartGame")
+
+}
+function closeGameStartModal(){
+    console.log("closeGameStartModal")
+
+}
+function closeDirectionsModal(){
+    console.log("closeDirectionsModal")
+
+}
+function closePauseModal(){
+    console.log("closePauseModal")
+
+}
+function correctAnswerChosen(){
+    console.log("correctAnswerChosen")
+
+}
+function wrongAnswerChosen(){
+    console.log("wrongAnswerChosen")
+
 }
 
 function generateQuestion() {
