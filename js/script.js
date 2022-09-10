@@ -93,10 +93,16 @@ function closePauseModal(){
 function correctAnswerChosen(){
     console.log("correctAnswerChosen")
     document.getElementById('correctAnswerModal').style.display = 'block'
+    checkGameEnd()
 }
 function wrongAnswerChosen(){
     console.log("wrongAnswerChosen")
     document.getElementById('wrongAnswerModal').style.display = 'block'
+    checkGameEnd()
+}
+function openGameEndModal(){
+    console.log("openGameEndModal")
+    document.getElementById('gameEndModal').style.display = 'block'
 }
 
 function generateQuestion() {
@@ -111,4 +117,10 @@ function generateQuestion() {
     document.getElementById('correctAnswerModal').style.display = 'none'
     document.getElementById('wrongAnswerModal').style.display = 'none'
 
+}
+
+function checkGameEnd(){
+    if(questionArray.length===0){
+        openGameEndModal()
+    }
 }
