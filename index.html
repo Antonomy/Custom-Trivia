@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,79 @@
     <title>Custom Trivia</title>
     <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
-    
+
 </head>
+
 <body>
+    <!-- Header -->
+    <header>
+        <h1>Theme Trivia</h1>
+    </header>
+    <!-- Controls -->
+    <nav>
+        <button id="navDirectionsButton" class="navButtons">Directions</button>
+        <button id="navPauseButton" class="navButtons">Pause</button>
+        <button id="navRestartButton" class="navButtons">Restart</button>
+    </nav>
+    <!-- Game -->
+    <main>
+        <!-- Game Start Modal -->
+        <div id="gameStartModal" class="modal">
+            <h2>Game Start Modal: Welcome to Theme Trivia!</h2>
+            <p>Grab your team, pick a theme!</p>
+            <h2>Directions</h2>
+            <ul>
+                <li>You have 30 seconds to answer the questions</li>
+            </ul>
+            <button id="closeGameStartModalButton">Close</button>
+        </div>
+        <!-- Directions Modal -->
+        <div id="directionsModal" class="modal" style="display: none">
+            <h2>Directions Modal</h2>
+            <ul>
+                <li>You have 30 seconds to answer the questions</li>
+            </ul>
+            <button id="closeDirectionsModalButton">Close</button>
+        </div>
+        <!-- Game End Modal -->
+        <div id="gameEndModal" class="modal" style="display: none">
+            <h2>Game End Modal</h2>
+            <h3>Team X has won the game</h3>
+            <button id="gameEndRestartButton">Restart</button>
+        </div>
+        <!-- Answer Result Modal -->
+        <div id="correctAnswerModal" class="modal" style="display: none">
+            <h2>Correct!</h2>
+            <button id="correctNextQuestionButton">Next Question</button>
+        </div>
+        <div id="wrongAnswerModal" class="modal" style="display: none">
+            <h2>Wrong!</h2>
+            <button id="wrongNextQuestionButton">Next Question</button>
+        </div>
+        <!-- Question -->
+        <div id="questionContainer">
+            <p id="question"></p>
+        </div>
+        <!-- Answers -->
+        <div id="answersContainer">
+            <ul id="answersList">
+                <li id="correctAnswer"></li>
+                <li id="wrongAnswer1"></li>
+                <li id="wrongAnswer2"></li>
+                <li id="wrongAnswer3"></li>
+            </ul>
+        </div>
+    </main>
+<footer>
     <a href="https://sfs-flex-evelyn.herokuapp.com/frontend-fundamentals/week-7/day-2/p1/">Assignment</a>
-test2
-    
+</footer>
 </body>
+
 </html> 
+
+<!-- Ideas -->
+<!-- Trivia with countdown timer that gives additional points if you dont use as much time to answer -->
+<!-- Toggle for timer continues nonstop? -->
+<!-- custom game time and round time -->
+<!-- Multiple Teams -->
+<!-- Custom team names -->
