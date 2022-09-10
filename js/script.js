@@ -55,7 +55,7 @@ document.getElementById('closeGameStartModalButton').addEventListener('click', t
 document.getElementById('closeDirectionsModalButton').addEventListener('click', testFunction);
 document.getElementById('gameEndRestartButton').addEventListener('click', testFunction);
 document.getElementById('correctNextQuestionButton').addEventListener('click', testFunction);
-document.getElementById('wrongNextQuestionButton').addEventListener('click', testFunction);
+document.getElementById('wrongNextQuestionButton').addEventListener('click', generateQuestion);
 document.getElementById('correctAnswer').addEventListener('click', testFunction);
 document.getElementById('wrongAnswer1').addEventListener('click', testFunction);
 document.getElementById('wrongAnswer2').addEventListener('click', testFunction);
@@ -63,4 +63,13 @@ document.getElementById('wrongAnswer3').addEventListener('click', testFunction);
 
 function testFunction() {
     console.log("Works")
+    generateQuestion
+}
+
+function generateQuestion() {
+    document.getElementById('question').textContent = questionArray[0].question;
+    document.getElementById('correctAnswer').textContent = questionArray[0].correctAnswer;
+    document.getElementById('wrongAnswer1').textContent = questionArray[0].wrongAnswer1;
+    document.getElementById('wrongAnswer2').textContent = questionArray[0].wrongAnswer2;
+    document.getElementById('wrongAnswer3').textContent = questionArray[0].wrongAnswer3;
 }
