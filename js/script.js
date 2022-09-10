@@ -40,3 +40,29 @@ let question4 = new Question(
     "Wrong Answer 3"
 )
 
+let questionArray = [
+    question1,
+    question2,
+    question3,
+    question4
+]
+
+// Event Listeners
+document.getElementById('navDirectionsButton').addEventListener('click', testFunction);
+document.getElementById('navPauseButton').addEventListener('click', testFunction);
+document.getElementById('navRestartButton').addEventListener('click', testFunction);
+document.getElementById('closeGameStartModalButton').addEventListener('click', testFunction);
+document.getElementById('closeDirectionsModalButton').addEventListener('click', testFunction);
+document.getElementById('gameEndRestartButton').addEventListener('click', testFunction);
+document.getElementById('correctNextQuestionButton').addEventListener('click', testFunction);
+document.getElementById('wrongNextQuestionButton').addEventListener('click', testFunction);
+document.getElementById('correctAnswer').addEventListener('click', testFunction);
+document.getElementById('wrongAnswer1').addEventListener('click', testFunction);
+document.getElementById('wrongAnswer2').addEventListener('click', testFunction);
+document.getElementById('wrongAnswer3').addEventListener('click', testFunction);
+
+
+
+function testFunction() {
+    console.log("Works")
+}
