@@ -61,8 +61,6 @@ document.getElementById('wrongAnswer1').addEventListener('click', testFunction);
 document.getElementById('wrongAnswer2').addEventListener('click', testFunction);
 document.getElementById('wrongAnswer3').addEventListener('click', testFunction);
 
-
-
 function testFunction() {
     console.log("Works")
 }
