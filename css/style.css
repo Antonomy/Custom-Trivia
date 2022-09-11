@@ -9,3 +9,8 @@ div{
   border: solid;
   margin:5px;
 }
+
+#gameStartModal {
+  z-index: 1;
+  background: grey;
+}

@@ -105,6 +105,13 @@ function openGameEndModal(){
     document.getElementById('gameEndModal').style.display = 'block'
 }
 
+let possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
+
+function randomizeAnswers(){
+    document.getElementById('answersList').appendChild(possibleAnswersArray[Math.floor(Math.random()*questionArray.length)])
+}
+
+
 function generateQuestion() {
     let randomQuestionArrayIndex = Math.floor(Math.random()*questionArray.length)
     document.getElementById('question').textContent = questionArray[randomQuestionArrayIndex].question;
@@ -112,11 +119,12 @@ function generateQuestion() {
     document.getElementById('wrongAnswer1').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer1;
     document.getElementById('wrongAnswer2').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer2;
     document.getElementById('wrongAnswer3').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer3;
+    
+    
     questionArray.splice(randomQuestionArrayIndex,1)
     // Removes Correct!/Wrong! modal
     document.getElementById('correctAnswerModal').style.display = 'none'
     document.getElementById('wrongAnswerModal').style.display = 'none'
-
 }
 
 function checkGameEnd(){
@@ -124,3 +132,9 @@ function checkGameEnd(){
         openGameEndModal()
     }
 }
+
+// Z-Index Map
+// Level 0: Game
+// Level 1: Correct/Incorrect
+// Level 2: Directions, Pause
+// Level 3: Game End
