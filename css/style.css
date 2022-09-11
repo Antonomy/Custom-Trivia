@@ -1,8 +1,24 @@
 *{
   box-sizing: border-box;  
-  margin: 0;
-  padding: 0;
+  margin: 1%;
+  padding: 1%;
   background-color: bisque;
+  z-index: 0;
+  position: relative;
+}
+
+main{
+  display: flex;
+  justify-content: center;
+}
+
+header{
+  text-align: center;
+}
+
+nav{
+  display:flex;
+  justify-content: center;
 }
 
 div{
@@ -10,7 +26,16 @@ div{
   margin:5px;
 }
 
-#gameStartModal {
+.modal{
+  width: auto;
+  position: absolute;
   z-index: 1;
-  background: grey;
+  display: flex;
+  flex-direction: column;
+}
+
+#triviaContainer{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
 }
