@@ -105,12 +105,15 @@ function openGameEndModal(){
     document.getElementById('gameEndModal').style.display = 'block'
 }
 
-let possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
+
 
 function randomizeAnswers(){
-    document.getElementById('answersList').appendChild(possibleAnswersArray[Math.floor(Math.random()*questionArray.length)])
+    let possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
+    possibleAnswersArray.forEach(possibleAnswer => {
+        document.getElementById('answersList').appendChild(possibleAnswersArray[Math.floor(Math.random()*(questionArray.length-1))])
+        possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
+    })
 }
-
 
 function generateQuestion() {
     let randomQuestionArrayIndex = Math.floor(Math.random()*questionArray.length)
@@ -118,9 +121,8 @@ function generateQuestion() {
     document.getElementById('correctAnswer').textContent = questionArray[randomQuestionArrayIndex].correctAnswer;
     document.getElementById('wrongAnswer1').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer1;
     document.getElementById('wrongAnswer2').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer2;
-    document.getElementById('wrongAnswer3').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer3;
-    
-    
+    document.getElementById('wrongAnswer3').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer3;   
+    randomizeAnswers()
     questionArray.splice(randomQuestionArrayIndex,1)
     // Removes Correct!/Wrong! modal
     document.getElementById('correctAnswerModal').style.display = 'none'
