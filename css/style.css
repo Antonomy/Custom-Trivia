@@ -23,11 +23,17 @@ nav{
   
 }
 
-.teamScores {
+.scores {
   display:flex;
   flex-direction: row;
   list-style: none;
   justify-content: space-evenly;
+}
+
+.teamScore{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 div{

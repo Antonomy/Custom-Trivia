@@ -146,6 +146,8 @@ function updateScoreboard(correctOrWrong) {
     //If correct, award point
     if(correctOrWrong){
         teamArray[0].score++
+        document.getElementById('team1Score').innerHTML = `Score: ${team1.score}`
+        document.getElementById('team2Score').innerHTML = `Score:<br>${team2.score}`
     }
     //Move team to end of lineup
     // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
