@@ -93,12 +93,12 @@ function closePauseModal() {
 function correctAnswerChosen() {
     console.log("correctAnswerChosen")
     document.getElementById('correctAnswerModal').style.display = 'block'
-    checkGameEnd()
+    updateScoreboard(true)
 }
 function wrongAnswerChosen() {
     console.log("wrongAnswerChosen")
     document.getElementById('wrongAnswerModal').style.display = 'block'
-    checkGameEnd()
+    updateScoreboard(false)
 }
 function openGameEndModal() {
     console.log("openGameEndModal")
@@ -142,19 +142,24 @@ let team2 = new Team(
 
 let teamArray = [team1,team2]
 
-function updateScoreboard() {
-    teamArray[0].score++
-    teamArray.push(teamArray.splice(0, 1)[0]);
+function updateScoreboard(correctOrWrong) {
+    //If correct, award point
+    if(correctOrWrong){
+        teamArray[0].score++
+    }
+    //Move team to end of lineup
     // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
-}
-
-function checkGameEnd() {
+    teamArray.push(teamArray.splice(0, 1)[0]);
+    //Check Game End - Out of questions
     if (questionArray.length === 0) {
+        let winner = teamArray[0].name
+        document.getElementById('winnerAnnouncement').textContent = `The winner is ${winner}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
     }
 }
+
 // Z-Index Map
 // Level 0: Game
 // Level 1: Correct/Incorrect
