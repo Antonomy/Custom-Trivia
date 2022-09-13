@@ -47,61 +47,49 @@ let questionArray = [
     question4
 ]
 
-// Event Listeners
-document.getElementById('navDirectionsButton').addEventListener('click', openNavDirections);
-document.getElementById('navPauseButton').addEventListener('click', pauseGame);
-document.getElementById('navRestartButton').addEventListener('click', restartGame);
-document.getElementById('closeGameStartModalButton').addEventListener('click', closeGameStartModal);
-document.getElementById('closeDirectionsModalButton').addEventListener('click', closeDirectionsModal);
-document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
-document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
-document.getElementById('correctNextQuestionButton').addEventListener('click', generateQuestion);
-document.getElementById('wrongNextQuestionButton').addEventListener('click', generateQuestion);
-document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
-document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
-document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
-document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
+
 
 // For testing
 generateQuestion()
 
 function openNavDirections() {
-    console.log("openNavDirections")
     document.getElementById('directionsModal').style.display = 'block'
 }
 function pauseGame() {
-    console.log("pauseGame")
     document.getElementById('pauseModal').style.display = 'block'
 
 }
 function restartGame() {
-    console.log("restartGame")
     window.location.reload()
 }
+
+let team1customname = ''
+let team2customname = ''
+
 function closeGameStartModal() {
-    console.log("closeGameStartModal")
     document.getElementById('gameStartModal').style.display = 'none'
+    //Store Team Names
+    team1customname = document.getElementById('team1customname').value
+    document.getElementById('team1Name').textContent = `${team1customname}: `
+    team2customname = document.getElementById('team2customname').value
+    document.getElementById('team2Name').textContent = `${team2customname}: `
 }
+
 function closeDirectionsModal() {
-    console.log("closeDirectionsModal")
     document.getElementById('directionsModal').style.display = 'none'
 }
 function closePauseModal() {
-    console.log("closePauseModal")
     document.getElementById('pauseModal').style.display = 'none'
 }
 function correctAnswerChosen() {
-    console.log("correctAnswerChosen")
     document.getElementById('correctAnswerModal').style.display = 'block'
     updateScoreboard(true)
 }
 function wrongAnswerChosen() {
-    console.log("wrongAnswerChosen")
     document.getElementById('wrongAnswerModal').style.display = 'block'
     updateScoreboard(false)
 }
 function openGameEndModal() {
-    console.log("openGameEndModal")
     document.getElementById('gameEndModal').style.display = 'block'
 }
 
@@ -134,10 +122,10 @@ class Team {
     }
 }
 let team1 = new Team(
-    "Team 1 Name",
+    team1customname
 )
 let team2 = new Team(
-    "Team 2 Name",
+    team2customname
 )
 
 let teamArray = [team1,team2]
@@ -146,8 +134,8 @@ function updateScoreboard(correctOrWrong) {
     //If correct, award point
     if(correctOrWrong){
         teamArray[0].score++
-        document.getElementById('team1Score').innerHTML = `Score: ${team1.score}`
-        document.getElementById('team2Score').innerHTML = `Score:<br>${team2.score}`
+        document.getElementById('team1Score').textContent = `Score: ${team1.score}`
+        document.getElementById('team2Score').textContent = `Score: ${team2.score}`
     }
     //Move team to end of lineup
     // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
@@ -162,8 +150,17 @@ function updateScoreboard(correctOrWrong) {
     }
 }
 
-// Z-Index Map
-// Level 0: Game
-// Level 1: Correct/Incorrect
-// Level 2: Directions, Pause
-// Level 3: Game End
+// Event Listeners
+document.getElementById('navDirectionsButton').addEventListener('click', openNavDirections);
+document.getElementById('navPauseButton').addEventListener('click', pauseGame);
+document.getElementById('navRestartButton').addEventListener('click', restartGame);
+document.getElementById('closeGameStartModalButton').addEventListener('click', closeGameStartModal);
+document.getElementById('closeDirectionsModalButton').addEventListener('click', closeDirectionsModal);
+document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
+document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
+document.getElementById('correctNextQuestionButton').addEventListener('click', generateQuestion);
+document.getElementById('wrongNextQuestionButton').addEventListener('click', generateQuestion);
+document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
+document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
+document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
+document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);

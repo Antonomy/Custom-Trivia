@@ -25,8 +25,8 @@
     <!-- Scoreboard -->
     <div id="scoreboard">
         <ul class="scores">
-            <li id="team1Name" class="teamScore">Team 1: <span id="team1Score">Score: 0</span></li>
-            <li id="team2Name" class="teamScore">Team 2: <span id="team2Score">Score:<br> 0</span></li>
+            <li class="teamScore"><span id="team1Name">Team 1: </span><span id="team1Score">Score: 0</span></li>
+            <li class="teamScore"><span id="team2Name">Team 2: </span><span id="team2Score">Score:<br> 0</span></li>
         </ul>
 
     </div>
@@ -40,7 +40,12 @@
             <ul>
                 <li>You have 30 seconds to answer the questions</li>
             </ul>
-            <button id="closeGameStartModalButton">Close</button>
+            <h2>Team Names:</h2>
+            <label for="team1">Team 1:</label>
+            <input type="text" id="team1customname">
+            <label for="team2">Team 2:</label>
+            <input type="text" id="team2customname">
+            <button id="closeGameStartModalButton">Start!</button>
         </div>
         <!-- Directions Modal -->
         <div id="directionsModal" class="modal" style="display: none">
