@@ -127,6 +127,27 @@ function generateQuestion() {
     document.getElementById('wrongAnswerModal').style.display = 'none'
 }
 
+class Team {
+    constructor(name) {
+        this.name = name;
+        this.score = 0;
+    }
+}
+let team1 = new Team(
+    "Team 1 Name",
+)
+let team2 = new Team(
+    "Team 2 Name",
+)
+
+let teamArray = [team1,team2]
+
+function updateScoreboard() {
+    teamArray[0].score++
+    teamArray.push(teamArray.splice(0, 1)[0]);
+    // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
+}
+
 function checkGameEnd() {
     if (questionArray.length === 0) {
         openGameEndModal()
@@ -134,7 +155,6 @@ function checkGameEnd() {
         document.getElementById('wrongAnswerModal').style.display = 'none'
     }
 }
-
 // Z-Index Map
 // Level 0: Game
 // Level 1: Correct/Incorrect
