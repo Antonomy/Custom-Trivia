@@ -8,17 +8,17 @@
     <title>Custom Trivia</title>
     <script src="./js/script.js" defer></script>
     <link rel="stylesheet" href="./css/style.css">
-
+    <link href='https://fonts.googleapis.com/css?family=Sacramento:400' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
     <!-- Header -->
     <header>
-        <h1>Theme Trivia</h1>
+        <h1 id="gameName">Custom Trivia</h1>
     </header>
     <!-- Controls -->
     <nav>
-        <button id="navDirectionsButton" class="navButtons">Directions</button>
+        <button id="navRulesButton" class="navButtons">Rules</button>
         <button id="navPauseButton" class="navButtons">Pause</button>
         <button id="navRestartButton" class="navButtons">Restart</button>
     </nav>
@@ -34,26 +34,28 @@
     <main>
         <!-- Game Start Modal -->
         <div id="gameStartModal" class="modal">
-            <h2>Game Start Modal: Welcome to Theme Trivia!</h2>
-            <p>Grab your team, pick a theme!</p>
+            <h2>Welcome to Custom Trivia!</h2>
+            <p>Where you get to play your way and let your colors show.</p>
             <h2>Directions</h2>
-            <ul>
-                <li>You have 30 seconds to answer the questions</li>
-            </ul>
-            <h2>Team Names:</h2>
-            <label for="team1">Team 1:</label>
-            <input type="text" id="team1customname" placeholder="Team1" value="Team 1">
-            <label for="team2">Team 2:</label>
-            <input type="text" id="team2customname" placeholder="Team 2" value="Team 2">
+            <p>Enter how you would like to play below</p>
+            <div id="customizationContainer">
+                <h2>Customizations</h2>
+                <label for="customGameName">Name Your Game:</label>
+                <input type="text" id="customGameName" placeholder="Name your Game: " value="Trivia Night"><br>
+                <label for="customTeam1Name">Team 1:</label>
+                <input type="text" id="customTeam1Name" placeholder="Team 1" value="Team 1"><br>
+                <label for="customTeam2Name">Team 2:</label>
+                <input type="text" id="customTeam2Name" placeholder="Team 2" value="Team 2">
+            </div>
             <button id="closeGameStartModalButton">Start!</button>
         </div>
         <!-- Directions Modal -->
-        <div id="directionsModal" class="modal" style="display: none">
-            <h2>Directions Modal</h2>
+        <div id="rulesModal" class="modal" style="display: none">
+            <h2>Rules Modal</h2>
             <ul>
                 <li>You have 30 seconds to answer the questions</li>
             </ul>
-            <button id="closeDirectionsModalButton">Close</button>
+            <button id="closeRulesModalButton">Close</button>
         </div>
         <!-- Pause Modal -->
         <div id="pauseModal" class="modal" style="display: none">

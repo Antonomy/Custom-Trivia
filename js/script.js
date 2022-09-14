@@ -1,3 +1,11 @@
+// Global Variables
+let customGameName = ''
+let customTeam1Name = ''
+let customTeam2Name = ''
+let team1 = ''
+let team2 = ''
+let teamArray = []
+
 // Question Class
 class Question {
     constructor(question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3) {
@@ -8,9 +16,7 @@ class Question {
         this.wrongAnswer3 = wrongAnswer3;
     }
 }
-
-// Default questions
-
+// Instantiate Questions
 let question1 = new Question(
     "Question 1?",
     "Q1CorrectAnswer",
@@ -39,48 +45,67 @@ let question4 = new Question(
     "Q4Wrong Answer 2",
     "Q4Wrong Answer 3"
 )
-
+//Question List
 let questionArray = [
     question1,
     question2,
     question3,
     question4
 ]
+//Teams Class
+class Team {
+    constructor(name) {
+        this.name = name;
+        this.score = 0;
+    }
+}
 
 
-
-// For testing
+// Start the Game
 generateQuestion()
 
-function openNavDirections() {
-    document.getElementById('directionsModal').style.display = 'block'
+//Open Rules
+function openNavRules() {
+    document.getElementById('rulesModal').style.display = 'block'
 }
+//Pause game - need to update to stop timer once timer is added
 function pauseGame() {
     document.getElementById('pauseModal').style.display = 'block'
-
 }
+//Refresh Page - Need to update to store info and clear scores
 function restartGame() {
     window.location.reload()
 }
 
-let team1customname = ''
-let team2customname = ''
-
 function closeGameStartModal() {
     document.getElementById('gameStartModal').style.display = 'none'
-    //Store Team Names
-    team1customname = document.getElementById('team1customname').value
-    document.getElementById('team1Name').textContent = `${team1customname}: `
-    team2customname = document.getElementById('team2customname').value
-    document.getElementById('team2Name').textContent = `${team2customname}: `
+    //Store Game Name
+    customGameName = document.getElementById('customGameName').value
+    //Update Game Name
+    document.getElementById('gameName').textContent = `${customGameName}`
+    //Store Team Name
+    customTeam1Name = document.getElementById('customTeam1Name').value
+    //Update Team Name
+    document.getElementById('team1Name').textContent = `${customTeam1Name}: `
+    //Store Team Name
+    customTeam2Name = document.getElementById('customTeam2Name').value
+    //Update Team Name
+    document.getElementById('team2Name').textContent = `${customTeam2Name}: `
+    team1 = new Team(customTeam1Name)
+    team2 = new Team(customTeam2Name)
+    teamArray.push(team1)
+    teamArray.push(team2)
+    console.log(teamArray)
 }
 
-function closeDirectionsModal() {
-    document.getElementById('directionsModal').style.display = 'none'
+//Modal Closing Buttons
+function closeRulesModal() {
+    document.getElementById('rulesModal').style.display = 'none'
 }
 function closePauseModal() {
     document.getElementById('pauseModal').style.display = 'none'
 }
+//Answer Grading
 function correctAnswerChosen() {
     document.getElementById('correctAnswerModal').style.display = 'block'
     updateScoreboard(true)
@@ -89,6 +114,15 @@ function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
     updateScoreboard(false)
 }
+
+// Removes Correct!/Wrong! modal
+function closeCorrectAnswerChosen() {
+    document.getElementById('correctAnswerModal').style.display = 'none'
+}
+function closeWrongAnswerChosen() {
+    document.getElementById('wrongAnswerModal').style.display = 'none'
+}
+//Game End Modal
 function openGameEndModal() {
     document.getElementById('gameEndModal').style.display = 'block'
 }
@@ -96,71 +130,61 @@ function openGameEndModal() {
 function randomizeAnswers() {
     let possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
     possibleAnswersArray.forEach(possibleAnswer => {
-        document.getElementById('answersList').appendChild(possibleAnswersArray[Math.floor(Math.random() * (questionArray.length - 1))])
+        document.getElementById('answersList').appendChild(possibleAnswersArray[Math.floor(Math.random() * (possibleAnswersArray.length - 1))])
         possibleAnswersArray = document.querySelectorAll('.possibleAnswer')
     })
 }
 
 function generateQuestion() {
+    //Randomize Question Array
     let randomQuestionArrayIndex = Math.floor(Math.random() * questionArray.length)
+    //Update displayed questions and answers
     document.getElementById('question').textContent = questionArray[randomQuestionArrayIndex].question;
     document.getElementById('correctAnswer').textContent = questionArray[randomQuestionArrayIndex].correctAnswer;
     document.getElementById('wrongAnswer1').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer1;
     document.getElementById('wrongAnswer2').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer2;
     document.getElementById('wrongAnswer3').textContent = questionArray[randomQuestionArrayIndex].wrongAnswer3;
+    //Randomize Answers
     randomizeAnswers()
+    //Remove Used Question
     questionArray.splice(randomQuestionArrayIndex, 1)
-    // Removes Correct!/Wrong! modal
-    document.getElementById('correctAnswerModal').style.display = 'none'
-    document.getElementById('wrongAnswerModal').style.display = 'none'
 }
 
-class Team {
-    constructor(name) {
-        this.name = name;
-        this.score = 0;
-    }
-}
-let team1 = new Team(
-    team1customname
-)
-let team2 = new Team(
-    team2customname
-)
-
-let teamArray = [team1,team2]
-
-function updateScoreboard(correctOrWrong) {
+function updateScoreboard(correct) {
     //If correct, award point
-    if(correctOrWrong){
+    if (correct) {
         teamArray[0].score++
         document.getElementById('team1Score').textContent = `Score: ${team1.score}`
         document.getElementById('team2Score').textContent = `Score: ${team2.score}`
     }
-    //Move team to end of lineup
-    // https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
-    teamArray.push(teamArray.splice(0, 1)[0]);
     //Check Game End - Out of questions
     if (questionArray.length === 0) {
-        let winner = teamArray[0].name
+        console.log(teamArray)
+        let winner = teamArray[0].name //STILL NEEDS TO BE FIXED 
         document.getElementById('winnerAnnouncement').textContent = `The winner is ${winner}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
+    } else {
+        //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
+        teamArray.push(teamArray.splice(0, 1)[0]);
+        generateQuestion()
     }
 }
 
 // Event Listeners
-document.getElementById('navDirectionsButton').addEventListener('click', openNavDirections);
+document.getElementById('navRulesButton').addEventListener('click', openNavRules);
 document.getElementById('navPauseButton').addEventListener('click', pauseGame);
 document.getElementById('navRestartButton').addEventListener('click', restartGame);
 document.getElementById('closeGameStartModalButton').addEventListener('click', closeGameStartModal);
-document.getElementById('closeDirectionsModalButton').addEventListener('click', closeDirectionsModal);
+document.getElementById('closeRulesModalButton').addEventListener('click', closeRulesModal);
 document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
 document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
-document.getElementById('correctNextQuestionButton').addEventListener('click', generateQuestion);
-document.getElementById('wrongNextQuestionButton').addEventListener('click', generateQuestion);
+document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
+document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
 document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
 document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
+
+//separate coorect/wrong next question buton to run a function that closes and then runsgenerate question
