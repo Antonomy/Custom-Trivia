@@ -95,7 +95,6 @@ function closeGameStartModal() {
     team2 = new Team(customTeam2Name)
     teamArray.push(team1)
     teamArray.push(team2)
-    console.log(teamArray)
 }
 
 //Modal Closing Buttons
@@ -159,9 +158,16 @@ function updateScoreboard(correct) {
     }
     //Check Game End - Out of questions
     if (questionArray.length === 0) {
-        console.log(teamArray)
-        let winner = teamArray[0].name //STILL NEEDS TO BE FIXED 
-        document.getElementById('winnerAnnouncement').textContent = `The winner is ${winner}!`
+        //Find winning team
+        // https://seanconnolly.dev/javascript-find-element-with-max-value
+        let winningTeam = teamArray.reduce(
+            (prev, current) => {
+                return prev.score > current.score ? prev.name : current.name
+            }
+        )
+        //Still need to figure out ties
+
+        document.getElementById('winnerAnnouncement').textContent = `The winner is ${winningTeam}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
