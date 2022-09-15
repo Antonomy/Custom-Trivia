@@ -50,13 +50,8 @@ main {
     inset 0 0 1.3rem #bc13fe;
   width: fit-content;
 }
-#gameName {
-  /* width: auto; */
-}
-
 @keyframes pulsate {
   100% {
-
     text-shadow:
       0 0 4px #fff,
       0 0 11px #fff,
@@ -66,11 +61,8 @@ main {
       0 0 90px #bc13fe,
       0 0 100px #bc13fe,
       0 0 150px #bc13fe;
-
   }
-
   0% {
-
     text-shadow:
       0 0 2px #fff,
       0 0 4px #fff,
@@ -80,7 +72,6 @@ main {
       0 0 55px #bc13fe,
       0 0 70px #bc13fe,
       0 0 80px #bc13fe;
-
   }
 }
 
@@ -92,27 +83,30 @@ nav {
 }
 
 #scoreboard {
-  background-color: blueviolet;
-  color: white;
-  width: 75%;
-  border-radius: 2rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .scores {
   display: flex;
   flex-direction: row;
-  list-style: none;
   justify-content: space-evenly;
+  width: 80%;
+  border-radius: 1rem;
+  background-color: blueviolet;
+  color: white;
 }
 
 .teamScore {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 div {
-  margin: 5px;
+  margin: 0.5rem;
 }
 
 .modal {
@@ -120,14 +114,15 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-content: center;
   align-items: center;
   position: absolute;
-  width: 70%;
-  background: rgba(255, 255, 255, 0.9);
+  width: 60%;
+  background: rgba(255, 255, 255, 0.80);
   color: purple;
   border-radius: 2rem;
   padding: 1rem;
-  /* align-content: center; */
+  
 }
 
 #triviaContainer {
@@ -143,8 +138,8 @@ div {
 #questionContainer {
   background-color: black;
   border-radius: 2rem;
-  padding: 1.5rem;
-
+  padding: 1.5rem 1.5rem 1.5rem 3rem;
+  text-align: left;
 }
 
 #answersList>.revealWrongAnswer {
@@ -165,14 +160,12 @@ div {
   background-color: black;
 }
 
-#answersList>li {
+li {
   list-style: none;
 }
 
 button {
   background: rgb(198, 130, 201);
-  display: flex;
-  justify-content: center;
   color: white;
   border-radius: 2rem;
   padding: .5rem;
