@@ -87,8 +87,8 @@ main {
 /* Neon: https://codepen.io/silvia-odwyer/pen/RwKMOpb */
 nav {
   display: flex;
+  width: 50%;
   justify-content: space-evenly;
-
 }
 
 #scoreboard {

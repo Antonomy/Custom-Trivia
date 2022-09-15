@@ -105,24 +105,42 @@ function closePauseModal() {
 function correctAnswerChosen() {
     document.getElementById('correctAnswerModal').style.display = 'block'
     updateScoreboard(true)
+    revealAnswers()
 }
 function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
     updateScoreboard(false)
+    revealAnswers()
 }
 
 // Removes Correct!/Wrong! modal
 function closeCorrectAnswerChosen() {
     document.getElementById('correctAnswerModal').style.display = 'none'
+    hideAnswers()
     generateQuestion()
 }
 function closeWrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'none'
+    hideAnswers()
     generateQuestion()
 }
 //Game End Modal
 function openGameEndModal() {
     document.getElementById('gameEndModal').style.display = 'block'
+}
+
+function revealAnswers() {
+    document.getElementById('correctAnswer').classList.add('revealCorrectAnswer')
+    document.getElementById('wrongAnswer1').classList.add('revealWrongAnswer')
+    document.getElementById('wrongAnswer2').classList.add('revealWrongAnswer')
+    document.getElementById('wrongAnswer3').classList.add('revealWrongAnswer')
+}
+
+function hideAnswers() {
+    document.getElementById('correctAnswer').classList.remove('revealCorrectAnswer')
+    document.getElementById('wrongAnswer1').classList.remove('revealWrongAnswer')
+    document.getElementById('wrongAnswer2').classList.remove('revealWrongAnswer')
+    document.getElementById('wrongAnswer3').classList.remove('revealWrongAnswer')
 }
 
 function randomizeAnswers() {
