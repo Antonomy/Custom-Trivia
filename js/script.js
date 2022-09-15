@@ -209,4 +209,8 @@ document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerCho
 document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
 
-//upload excel questions & answers
+
+// Remaining Ideas
+//Themed colors
+//Correct/incorrect answer colors
+//excel upload questions

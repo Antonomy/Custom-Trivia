@@ -1,17 +1,16 @@
 * {
   box-sizing: border-box;
-  margin: 0%;
-  padding: 0.5%;
-}
-
-html {
-  background-color: black;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
 }
 
 main {
@@ -21,11 +20,10 @@ main {
   text-align: center;
   width: 80%;
   background-color: rgb(103, 17, 120);
+  border-radius: 1rem;
 }
 
-/* Why is main only behind triviaContainer */
-
-header {
+#header {
   text-align: center;
   color: #fff;
   font-family: "Sacramento", sans-serif;
@@ -38,7 +36,8 @@ header {
     0 0 92px #bc13fe,
     0 0 102px #bc13fe,
     0 0 151px #bc13fe;
-  font-size: 2rem;
+  display: inline;
+  font-size: 2vw;
   animation: pulsate 1.5s infinite alternate;
   border: 0.2rem solid #fff;
   border-radius: 2rem;
@@ -49,6 +48,10 @@ header {
     0 0 0.8rem #bc13fe,
     0 0 2.8rem #bc13fe,
     inset 0 0 1.3rem #bc13fe;
+  width: fit-content;
+}
+#gameName {
+  /* width: auto; */
 }
 
 @keyframes pulsate {
@@ -91,6 +94,7 @@ nav {
 #scoreboard {
   background-color: blueviolet;
   color: white;
+  width: 75%;
   border-radius: 2rem;
 }
 
@@ -122,6 +126,7 @@ div {
   background: rgba(255, 255, 255, 0.9);
   color: purple;
   border-radius: 2rem;
+  padding: 1rem;
   /* align-content: center; */
 }
 
@@ -138,16 +143,22 @@ div {
 #questionContainer {
   background-color: black;
   border-radius: 2rem;
-  padding: 1rem;
+  padding: 1.5rem;
 
 }
 
-.possibleAnswer: {
-  background-color: grey;
-  margin: .25rem;
-  border-radius: 2rem;
-  padding: 1rem;
+#answersList>.revealWrongAnswer {
+  background-color: rgb(213, 125, 125);
+}
+#answersList > .revealCorrectAnswer{
+  background-color: rgb(148, 204, 148);
+}
 
+.possibleAnswer {
+  background-color: grey;
+  margin: .35rem;
+  border-radius: 2rem;
+  padding: .75rem;
 }
 
 .possibleAnswer:hover {
@@ -164,8 +175,10 @@ button {
   justify-content: center;
   color: white;
   border-radius: 2rem;
+  padding: .5rem;
 }
 
 button:hover {
   background: rgb(204, 107, 209);
 }
+
