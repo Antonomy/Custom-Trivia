@@ -60,10 +60,6 @@ class Team {
     }
 }
 
-
-// Start the Game
-generateQuestion()
-
 //Open Rules
 function openNavRules() {
     document.getElementById('rulesModal').style.display = 'block'
@@ -95,6 +91,7 @@ function closeGameStartModal() {
     team2 = new Team(customTeam2Name)
     teamArray.push(team1)
     teamArray.push(team2)
+    generateQuestion()
 }
 
 //Modal Closing Buttons
@@ -117,9 +114,11 @@ function wrongAnswerChosen() {
 // Removes Correct!/Wrong! modal
 function closeCorrectAnswerChosen() {
     document.getElementById('correctAnswerModal').style.display = 'none'
+    generateQuestion()
 }
 function closeWrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'none'
+    generateQuestion()
 }
 //Game End Modal
 function openGameEndModal() {
@@ -158,23 +157,40 @@ function updateScoreboard(correct) {
     }
     //Check Game End - Out of questions
     if (questionArray.length === 0) {
-        //Find winning team
+        // Find winning team
         // https://seanconnolly.dev/javascript-find-element-with-max-value
-        let winningTeam = teamArray.reduce(
+        // const winningTeam = teamArray.reduce(
+        //     (prev, current) => {
+        //         return prev.score > current.score ? prev.name : current.name
+        //     }
+        // )
+        //Still need to figure out ties  - filter()
+
+        //NEED TO CLEAN UP
+        // Find Highest Score
+        const highestScore = teamArray.reduce(
             (prev, current) => {
-                return prev.score > current.score ? prev.name : current.name
+                return prev.score > current.score ? prev.score : current.score
             }
         )
-        //Still need to figure out ties
+        // Find Team(s) with Highest Scores
+        const winningTeams = teamArray.filter(team => team.score === highestScore)
+        let winningTeamsString = ''
+        winningTeams.map(teamObj => {
+            if (winningTeamsString === '') {
+                winningTeamsString += `${teamObj.name} `
+            } else {
+                winningTeamsString += `& ${teamObj.name}!`
+            }
+        })
 
-        document.getElementById('winnerAnnouncement').textContent = `The winner is ${winningTeam}!`
+        document.getElementById('winnerAnnouncement').textContent = `The winner is ${winningTeamsString}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
     } else {
         //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
         teamArray.push(teamArray.splice(0, 1)[0]);
-        generateQuestion()
     }
 }
 
@@ -193,4 +209,4 @@ document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerCho
 document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
 
-//separate coorect/wrong next question buton to run a function that closes and then runsgenerate question
+//upload excel questions & answers

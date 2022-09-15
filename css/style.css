@@ -8,14 +8,22 @@ html {
   background-color: black;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
 main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-  height: 75%;
+  text-align: center;
+  width: 80%;
   background-color: rgb(103, 17, 120);
 }
+
+/* Why is main only behind triviaContainer */
 
 header {
   text-align: center;
@@ -43,6 +51,36 @@ header {
     inset 0 0 1.3rem #bc13fe;
 }
 
+@keyframes pulsate {
+  100% {
+
+    text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+
+  }
+
+  0% {
+
+    text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+
+  }
+}
+
 /* Neon: https://codepen.io/silvia-odwyer/pen/RwKMOpb */
 nav {
   display: flex;
@@ -53,6 +91,7 @@ nav {
 #scoreboard {
   background-color: blueviolet;
   color: white;
+  border-radius: 2rem;
 }
 
 .scores {
@@ -82,7 +121,7 @@ div {
   width: 70%;
   background: rgba(255, 255, 255, 0.9);
   color: purple;
-  border-radius: 25px;
+  border-radius: 2rem;
   /* align-content: center; */
 }
 
@@ -93,6 +132,26 @@ div {
   width: 75%;
   background: rgb(160, 131, 168);
   color: white;
+  border-radius: 2rem;
+}
+
+#questionContainer {
+  background-color: black;
+  border-radius: 2rem;
+  padding: 1rem;
+
+}
+
+.possibleAnswer: {
+  background-color: grey;
+  margin: .25rem;
+  border-radius: 2rem;
+  padding: 1rem;
+
+}
+
+.possibleAnswer:hover {
+  background-color: black;
 }
 
 #answersList>li {
@@ -104,4 +163,9 @@ button {
   display: flex;
   justify-content: center;
   color: white;
+  border-radius: 2rem;
+}
+
+button:hover {
+  background: rgb(204, 107, 209);
 }
