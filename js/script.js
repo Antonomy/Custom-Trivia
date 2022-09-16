@@ -5,7 +5,7 @@ let customTeam2Name = ''
 let team1 = ''
 let team2 = ''
 let teamArray = []
-
+let currentRound = 1
 // Question Class
 class Question {
     constructor(question, correctAnswer, wrongAnswer1, wrongAnswer2, wrongAnswer3) {
@@ -221,6 +221,9 @@ function nextQuestion() {
 }
 function closeNextRoundModal() {
     document.getElementById('nextRoundModal').style.display = 'none'
+    hideAnswers()
+    generateQuestion()
+    makeAnswersClickable()
 }
 //Game End Modal
 function openGameEndModal() {
@@ -274,8 +277,11 @@ function updateScoreboard(correct) {
     //If there are no more questions and there ARE more rounds
     if (questionArray.length === 0 && roundsArray.length !== 1) {
         roundsArray.splice(roundsArray[0], 1)
+        currentRound++
         questionArray = roundsArray[0]
+        document.getElementById('nextQuestionButton').style.display = 'none'
         document.getElementById('nextRoundModal').style.display = 'block'
+        document.getElementById('nextRoundAnnouncement').textContent = `Round ${currentRound} of 3.`
         //If there are no more questions and there no more rounds
     } else if (questionArray.length === 0 && roundsArray.length === 1) {
         // https://seanconnolly.dev/javascript-find-element-with-max-value
@@ -300,6 +306,7 @@ function updateScoreboard(correct) {
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
+        document.getElementById('nextQuestionButton').style.display = 'none'
     }
     //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
     teamArray.push(teamArray.splice(0, 1)[0]);
