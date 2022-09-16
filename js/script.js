@@ -170,8 +170,8 @@ function updateScoreboard(correct) {
     //If correct, award point
     if (correct) {
         teamArray[0].score++
-        document.getElementById('team1Score').textContent = `Score: ${team1.score}`
-        document.getElementById('team2Score').textContent = `Score: ${team2.score}`
+        document.getElementById('team1Score').textContent = `${team1.score}`
+        document.getElementById('team2Score').textContent = `${team2.score}`
     }
     //Check Game End - Out of questions
     if (questionArray.length === 0) {

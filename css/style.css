@@ -103,6 +103,9 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: #bc13fe;
+  border-radius: 1rem;
+  padding: .4rem;
 }
 
 div {
