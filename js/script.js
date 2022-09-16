@@ -182,21 +182,25 @@ function correctAnswerChosen() {
     teamArray[0].score++
     document.getElementById('correctAnswerModal').style.display = 'block'
     document.getElementById('nextQuestionButton').style.display = 'block'
+    setTimeout(() => {
+        document.getElementById('correctAnswerModal').style.display = 'none'
+    },1000)
     updateScoreboard(true)
     revealAnswers()
 }
 function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
+    setTimeout(() => {
+        document.getElementById('wrongAnswerModal').style.display = 'none'
+    },1000)
     document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(false)
     revealAnswers()
 }
 
 // Removes Correct!/Wrong! modal
-function closeResultModal() {
-    document.getElementById('correctAnswerModal').style.display = 'none'
+function nextQuestion() {
     document.getElementById('nextQuestionButton').style.display = 'none'
-    document.getElementById('wrongAnswerModal').style.display = 'none'
     hideAnswers()
     generateQuestion()
 }
@@ -297,7 +301,7 @@ document.getElementById('nextRoundButton').addEventListener('click', closeNextRo
 document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
 // document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
 // document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
-document.getElementById('nextQuestionButton').addEventListener('click', closeResultModal);
+document.getElementById('nextQuestionButton').addEventListener('click', nextQuestion);
 document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
 document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
