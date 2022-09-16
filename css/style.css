@@ -50,6 +50,7 @@ main {
     inset 0 0 1.3rem #bc13fe;
   width: fit-content;
 }
+
 @keyframes pulsate {
   100% {
     text-shadow:
@@ -62,6 +63,7 @@ main {
       0 0 100px #bc13fe,
       0 0 150px #bc13fe;
   }
+
   0% {
     text-shadow:
       0 0 2px #fff,
@@ -125,7 +127,7 @@ div {
   color: purple;
   border-radius: 2rem;
   padding: 1rem;
-  
+
 }
 
 #triviaContainer {
@@ -148,7 +150,8 @@ div {
 #answersList>.revealWrongAnswer {
   background-color: rgb(213, 125, 125);
 }
-#answersList > .revealCorrectAnswer{
+
+#answersList>.revealCorrectAnswer {
   background-color: rgb(148, 204, 148);
 }
 
@@ -163,7 +166,7 @@ div {
   background-color: black;
 }
 
-.nextQuestionButton{
+.nextQuestionButton {
   background-color: grey;
   margin: .35rem;
   border-radius: 2rem;
@@ -184,4 +187,3 @@ button {
 button:hover {
   background: rgb(204, 107, 209);
 }
-

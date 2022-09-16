@@ -123,7 +123,7 @@ let round3questionArray = [
     r3question4
 ]
 
-let roundsArray = [round1QuestionArray,round2questionArray,round3questionArray]
+let roundsArray = [round1QuestionArray, round2questionArray, round3questionArray]
 
 let questionArray = roundsArray[0]
 
@@ -184,7 +184,7 @@ function correctAnswerChosen() {
     document.getElementById('nextQuestionButton').style.display = 'block'
     setTimeout(() => {
         document.getElementById('correctAnswerModal').style.display = 'none'
-    },1000)
+    }, 1000)
     updateScoreboard(true)
     revealAnswers()
 }
@@ -192,7 +192,7 @@ function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
     setTimeout(() => {
         document.getElementById('wrongAnswerModal').style.display = 'none'
-    },1000)
+    }, 1000)
     document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(false)
     revealAnswers()
@@ -257,12 +257,12 @@ function updateScoreboard(correct) {
     }
     //Check Game End - Out of questions
     //If there are no more questions and there ARE more rounds
-    if (questionArray.length === 0 && roundsArray.length !== 1){
+    if (questionArray.length === 0 && roundsArray.length !== 1) {
         roundsArray.splice(roundsArray[0], 1)
         questionArray = roundsArray[0]
         document.getElementById('nextRoundModal').style.display = 'block'
-    //If there are no more questions and there no more rounds
-    }else if (questionArray.length === 0 && roundsArray.length === 1) {
+        //If there are no more questions and there no more rounds
+    } else if (questionArray.length === 0 && roundsArray.length === 1) {
         // https://seanconnolly.dev/javascript-find-element-with-max-value
         // Find Highest Score
         const highestScore = teamArray.reduce(
@@ -280,14 +280,14 @@ function updateScoreboard(correct) {
                 winningTeamsString += `& ${teamObj.name}!`
             }
         })
-// Display winning team, don't show correct/incorrect modal
+        // Display winning team, don't show correct/incorrect modal
         document.getElementById('winnerAnnouncement').textContent = `The winner is ${winningTeamsString}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
     }
-        //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
-        teamArray.push(teamArray.splice(0, 1)[0]);
+    //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
+    teamArray.push(teamArray.splice(0, 1)[0]);
 }
 
 // Event Listeners
@@ -299,8 +299,6 @@ document.getElementById('closeRulesModalButton').addEventListener('click', close
 document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
 document.getElementById('nextRoundButton').addEventListener('click', closeNextRoundModal);
 document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
-// document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
-// document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
 document.getElementById('nextQuestionButton').addEventListener('click', nextQuestion);
 document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
 document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
