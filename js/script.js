@@ -187,6 +187,7 @@ function correctAnswerChosen() {
     }, 1000)
     updateScoreboard(true)
     revealAnswers()
+    makeAnswersUnclickable()
 }
 function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
@@ -196,13 +197,27 @@ function wrongAnswerChosen() {
     document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(false)
     revealAnswers()
+    makeAnswersUnclickable()
 }
 
+function makeAnswersUnclickable() {
+    document.getElementById('correctAnswer').removeEventListener('click', correctAnswerChosen);
+    document.getElementById('wrongAnswer1').removeEventListener('click', wrongAnswerChosen);
+    document.getElementById('wrongAnswer2').removeEventListener('click', wrongAnswerChosen);
+    document.getElementById('wrongAnswer3').removeEventListener('click', wrongAnswerChosen);
+}
+function makeAnswersClickable() {
+    document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
+    document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
+    document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
+    document.getElementById('wrongAnswer3').addEventListener('click', wrongAnswerChosen);
+}
 // Removes Correct!/Wrong! modal
 function nextQuestion() {
     document.getElementById('nextQuestionButton').style.display = 'none'
     hideAnswers()
     generateQuestion()
+    makeAnswersClickable()
 }
 function closeNextRoundModal() {
     document.getElementById('nextRoundModal').style.display = 'none'
