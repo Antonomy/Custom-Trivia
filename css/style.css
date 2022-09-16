@@ -120,7 +120,7 @@ div {
   align-content: center;
   align-items: center;
   position: absolute;
-  width: 60%;
+  width: 50%;
   background: rgba(255, 255, 255, 0.80);
   color: purple;
   border-radius: 2rem;
@@ -161,6 +161,13 @@ div {
 
 .possibleAnswer:hover {
   background-color: black;
+}
+
+.nextQuestionButton{
+  background-color: grey;
+  margin: .35rem;
+  border-radius: 2rem;
+  padding: .75rem;
 }
 
 li {

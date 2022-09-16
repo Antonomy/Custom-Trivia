@@ -179,23 +179,23 @@ function closePauseModal() {
 }
 //Answer Grading
 function correctAnswerChosen() {
+    teamArray[0].score++
     document.getElementById('correctAnswerModal').style.display = 'block'
+    document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(true)
     revealAnswers()
 }
 function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'block'
+    document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(false)
     revealAnswers()
 }
 
 // Removes Correct!/Wrong! modal
-function closeCorrectAnswerChosen() {
+function closeResultModal() {
     document.getElementById('correctAnswerModal').style.display = 'none'
-    hideAnswers()
-    generateQuestion()
-}
-function closeWrongAnswerChosen() {
+    document.getElementById('nextQuestionButton').style.display = 'none'
     document.getElementById('wrongAnswerModal').style.display = 'none'
     hideAnswers()
     generateQuestion()
@@ -248,7 +248,6 @@ function generateQuestion() {
 function updateScoreboard(correct) {
     //If correct, award point
     if (correct) {
-        teamArray[0].score++
         document.getElementById('team1Score').textContent = `${team1.score}`
         document.getElementById('team2Score').textContent = `${team2.score}`
     }
@@ -296,8 +295,9 @@ document.getElementById('closeRulesModalButton').addEventListener('click', close
 document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
 document.getElementById('nextRoundButton').addEventListener('click', closeNextRoundModal);
 document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
-document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
-document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
+// document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
+// document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
+document.getElementById('nextQuestionButton').addEventListener('click', closeResultModal);
 document.getElementById('correctAnswer').addEventListener('click', correctAnswerChosen);
 document.getElementById('wrongAnswer1').addEventListener('click', wrongAnswerChosen);
 document.getElementById('wrongAnswer2').addEventListener('click', wrongAnswerChosen);
