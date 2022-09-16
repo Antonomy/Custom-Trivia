@@ -17,41 +17,117 @@ class Question {
     }
 }
 // Instantiate Questions
-let question1 = new Question(
-    "Question 1?",
-    "Q1CorrectAnswer",
-    "Q1Wrong Answer 1",
-    "Q1Wrong Answer 2",
-    "Q1Wrong Answer 3"
+let r1question1 = new Question(
+    "r1Question 1?",
+    "r1Q1CorrectAnswer",
+    "r1Q1Wrong Answer 1",
+    "r1Q1Wrong Answer 2",
+    "r1Q1Wrong Answer 3"
 )
-let question2 = new Question(
-    "Question 2?",
-    "Q2CorrectAnswer",
-    "Q2Wrong Answer 1",
-    "Q2Wrong Answer 2",
-    "Q2Wrong Answer 3"
+let r1question2 = new Question(
+    "r1Question 2?",
+    "r1Q2CorrectAnswer",
+    "r1Q2Wrong Answer 1",
+    "r1Q2Wrong Answer 2",
+    "r1Q2Wrong Answer 3"
 )
-let question3 = new Question(
-    "Question 3?",
-    "Q3CorrectAnswer",
-    "Q3Wrong Answer 1",
-    "Q3Wrong Answer 2",
+let r1question3 = new Question(
+    "r1Question 3?",
+    "r1Q3CorrectAnswer",
+    "r1Q3Wrong Answer 1",
+    "r1Q3Wrong Answer 2",
     "Q3Wrong Answer 3"
 )
-let question4 = new Question(
-    "Question 4?",
-    "Q4CorrectAnswer",
-    "Q4Wrong Answer 1",
-    "Q4Wrong Answer 2",
-    "Q4Wrong Answer 3"
+let r1question4 = new Question(
+    "r1Question 4?",
+    "r1Q4CorrectAnswer",
+    "r1Q4Wrong Answer 1",
+    "r1Q4Wrong Answer 2",
+    "r1Q4Wrong Answer 3"
+)
+let r2question1 = new Question(
+    "r2Question 1?",
+    "r2Q1CorrectAnswer",
+    "r2Q1Wrong Answer 1",
+    "r2Q1Wrong Answer 2",
+    "r2Q1Wrong Answer 3"
+)
+let r2question2 = new Question(
+    "r2Question 2?",
+    "r2Q2CorrectAnswer",
+    "r2Q2Wrong Answer 1",
+    "r2Q2Wrong Answer 2",
+    "Qr22Wrong Answer 3"
+)
+let r2question3 = new Question(
+    "r2Question 3?",
+    "r2Q3CorrectAnswer",
+    "r2Q3Wrong Answer 1",
+    "r2Q3Wrong Answer 2",
+    "r2Q3Wrong Answer 3"
+)
+let r2question4 = new Question(
+    "r2Question 4?",
+    "r2Q4CorrectAnswer",
+    "r2Q4Wrong Answer 1",
+    "r2Q4Wrong Answer 2",
+    "r2Q4Wrong Answer 3"
+)
+let r3question1 = new Question(
+    "r3Question 1?",
+    "r3Q1CorrectAnswer",
+    "r3Q1Wrong Answer 1",
+    "r3Q1Wrong Answer 2",
+    "r3Q1Wrong Answer 3"
+)
+let r3question2 = new Question(
+    "r3Question 2?",
+    "r3Q2CorrectAnswer",
+    "r3Q2Wrong Answer 1",
+    "r3Q2Wrong Answer 2",
+    "r3Q2Wrong Answer 3"
+)
+let r3question3 = new Question(
+    "r3Question 3?",
+    "r3Q3CorrectAnswer",
+    "r3Q3Wrong Answer 1",
+    "r3Q3Wrong Answer 2",
+    "r3Q3Wrong Answer 3"
+)
+let r3question4 = new Question(
+    "r3Question 4?",
+    "r3Q4CorrectAnswer",
+    "r3Q4Wrong Answer 1",
+    "r3Q4Wrong Answer 2",
+    "r3Q4Wrong Answer 3"
 )
 //Question List
-let questionArray = [
-    question1,
-    question2,
-    question3,
-    question4
+let round1QuestionArray = [
+    r1question1,
+    r1question2,
+    r1question3,
+    r1question4
 ]
+
+let round2questionArray = [
+    r2question1,
+    r2question2,
+    r2question3,
+    r2question4
+]
+
+let round3questionArray = [
+    r3question1,
+    r3question2,
+    r3question3,
+    r3question4
+]
+
+let roundsArray = [round1QuestionArray,round2questionArray,round3questionArray]
+
+let questionArray = roundsArray[0]
+
+
 //Teams Class
 class Team {
     constructor(name) {
@@ -124,6 +200,9 @@ function closeWrongAnswerChosen() {
     hideAnswers()
     generateQuestion()
 }
+function closeNextRoundModal() {
+    document.getElementById('nextRoundModal').style.display = 'none'
+}
 //Game End Modal
 function openGameEndModal() {
     document.getElementById('gameEndModal').style.display = 'block'
@@ -174,17 +253,14 @@ function updateScoreboard(correct) {
         document.getElementById('team2Score').textContent = `${team2.score}`
     }
     //Check Game End - Out of questions
-    if (questionArray.length === 0) {
-        // Find winning team
+    //If there are no more questions and there ARE more rounds
+    if (questionArray.length === 0 && roundsArray.length !== 1){
+        roundsArray.splice(roundsArray[0], 1)
+        questionArray = roundsArray[0]
+        document.getElementById('nextRoundModal').style.display = 'block'
+    //If there are no more questions and there no more rounds
+    }else if (questionArray.length === 0 && roundsArray.length === 1) {
         // https://seanconnolly.dev/javascript-find-element-with-max-value
-        // const winningTeam = teamArray.reduce(
-        //     (prev, current) => {
-        //         return prev.score > current.score ? prev.name : current.name
-        //     }
-        // )
-        //Still need to figure out ties  - filter()
-
-        //NEED TO CLEAN UP
         // Find Highest Score
         const highestScore = teamArray.reduce(
             (prev, current) => {
@@ -201,15 +277,14 @@ function updateScoreboard(correct) {
                 winningTeamsString += `& ${teamObj.name}!`
             }
         })
-
+// Display winning team, don't show correct/incorrect modal
         document.getElementById('winnerAnnouncement').textContent = `The winner is ${winningTeamsString}!`
         openGameEndModal()
         document.getElementById('correctAnswerModal').style.display = 'none'
         document.getElementById('wrongAnswerModal').style.display = 'none'
-    } else {
+    }
         //Move team to end of lineup | https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
         teamArray.push(teamArray.splice(0, 1)[0]);
-    }
 }
 
 // Event Listeners
@@ -219,6 +294,7 @@ document.getElementById('navRestartButton').addEventListener('click', restartGam
 document.getElementById('closeGameStartModalButton').addEventListener('click', closeGameStartModal);
 document.getElementById('closeRulesModalButton').addEventListener('click', closeRulesModal);
 document.getElementById('closePauseModalButton').addEventListener('click', closePauseModal);
+document.getElementById('nextRoundButton').addEventListener('click', closeNextRoundModal);
 document.getElementById('gameEndRestartButton').addEventListener('click', restartGame);
 document.getElementById('correctNextQuestionButton').addEventListener('click', closeCorrectAnswerChosen);
 document.getElementById('wrongNextQuestionButton').addEventListener('click', closeWrongAnswerChosen);
