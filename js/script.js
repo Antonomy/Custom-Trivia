@@ -36,7 +36,7 @@ let r1question3 = new Question(
     "r1Q3CorrectAnswer",
     "r1Q3Wrong Answer 1",
     "r1Q3Wrong Answer 2",
-    "Q3Wrong Answer 3"
+    "r1Q3Wrong Answer 3"
 )
 let r1question4 = new Question(
     "r1Question 4?",
@@ -57,7 +57,7 @@ let r2question2 = new Question(
     "r2Q2CorrectAnswer",
     "r2Q2Wrong Answer 1",
     "r2Q2Wrong Answer 2",
-    "Qr22Wrong Answer 3"
+    "r2Q2Wrong Answer 3"
 )
 let r2question3 = new Question(
     "r2Question 3?",
