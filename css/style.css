@@ -123,6 +123,7 @@ div {
   align-items: center;
   position: absolute;
   width: 50%;
+  height: 50%;
   background: rgba(255, 255, 255, 0.80);
   color: purple;
   border-radius: 2rem;

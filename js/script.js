@@ -164,6 +164,8 @@ function closeGameStartModal() {
     customTeam2Name = document.getElementById('customTeam2Name').value
     //Update Team Name
     document.getElementById('team2Name').textContent = `${customTeam2Name}: `
+    //Store customCountdown
+    customCountdown = document.getElementById('customCountdown').value
     team1 = new Team(customTeam1Name)
     team2 = new Team(customTeam2Name)
     teamArray.push(team1)
@@ -258,8 +260,7 @@ function randomizeAnswers() {
     })
 }
 
-let newCountdown = 30
-let currentCountdown = newCountdown
+let currentCountdown = customCountdown
 let timer
 
 function startCountdown() {
@@ -271,7 +272,7 @@ function pauseCountdown() {
 
 function resetCountdown() {
     clearInterval(timer)
-    currentCountdown = newCountdown
+    currentCountdown = customCountdown
     document.getElementById('timer').textContent = currentCountdown
 }
 
