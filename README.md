@@ -29,7 +29,6 @@ Credit and Gratitude:
 Initial structure: https://bwilson19.github.io/baseballtrivia/
 High Score: https://seanconnolly.dev/javascript-find-element-with-max-value
 Team Rotation: https://stackoverflow.com/questions/24909371/move-item-in-array-to-last-position
+ClearInterval: https://developer.mozilla.org/en-US/docs/Web/API/clearInterval
 Bug fixing: Teo Marcelo
 Emotional Support: *fire* 3rd Degree Burns *fire*
-
-

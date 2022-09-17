@@ -143,6 +143,7 @@ function openNavRules() {
 //Pause game - need to update to stop timer once timer is added
 function pauseGame() {
     document.getElementById('pauseModal').style.display = 'block'
+    pauseCountdown()
 }
 //Refresh Page - Need to update to store info and clear scores
 function restartGame() {
@@ -176,6 +177,7 @@ function closeRulesModal() {
 }
 function closePauseModal() {
     document.getElementById('pauseModal').style.display = 'none'
+    startCountdown()
 }
 //Answer Grading
 function correctAnswerChosen() {
@@ -187,6 +189,7 @@ function correctAnswerChosen() {
     }, 1000)
     updateScoreboard(true)
     revealAnswers()
+    pauseCountdown()
     makeAnswersUnclickable()
 }
 function wrongAnswerChosen() {
@@ -197,6 +200,7 @@ function wrongAnswerChosen() {
     document.getElementById('nextQuestionButton').style.display = 'block'
     updateScoreboard(false)
     revealAnswers()
+    pauseCountdown()
     makeAnswersUnclickable()
 }
 
@@ -218,6 +222,8 @@ function nextQuestion() {
     hideAnswers()
     generateQuestion()
     makeAnswersClickable()
+    resetCountdown()
+    startCountdown()
 }
 function closeNextRoundModal() {
     document.getElementById('nextRoundModal').style.display = 'none'
@@ -252,6 +258,37 @@ function randomizeAnswers() {
     })
 }
 
+let newCountdown = 30
+let currentCountdown = newCountdown
+let timer
+
+function startCountdown() {
+    timer = setInterval(countDown, 1000)
+}
+function pauseCountdown() {
+    clearInterval(timer)
+}
+
+function resetCountdown() {
+    clearInterval(timer)
+    currentCountdown = newCountdown
+    document.getElementById('timer').textContent = currentCountdown
+}
+
+function countDown() {
+    currentCountdown--
+    document.getElementById('timer').textContent = currentCountdown
+    if (currentCountdown === 0) {
+        pauseCountdown()
+        updateScoreboard(false)
+        revealAnswers()
+        makeAnswersUnclickable()
+        document.getElementById('nextQuestionButton').style.display = 'block'
+        document.getElementById('timer').textContent = "You're out of time"
+    }
+}
+
+
 function generateQuestion() {
     //Randomize Question Array
     let randomQuestionArrayIndex = Math.floor(Math.random() * questionArray.length)
@@ -265,6 +302,8 @@ function generateQuestion() {
     randomizeAnswers()
     //Remove Used Question
     questionArray.splice(randomQuestionArrayIndex, 1)
+    resetCountdown()
+    startCountdown()
 }
 
 function updateScoreboard(correct) {
