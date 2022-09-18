@@ -96,7 +96,7 @@ nav {
   justify-content: space-evenly;
   width: 80%;
   border-radius: 1rem;
-  background-color: blueviolet;
+  background-color: rgb(103, 17, 120);
   color: white;
 }
 
@@ -105,7 +105,7 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #bc13fe;
+  background-color: rgb(160, 131, 168);
   border-radius: 1rem;
   padding: .4rem;
 }
@@ -164,7 +164,7 @@ div {
 }
 
 .possibleAnswer:hover {
-  background-color: black;
+  background-color: rgb(103, 17, 120);
 }
 
 .nextQuestionButton {
@@ -179,7 +179,7 @@ li {
 }
 
 button {
-  background: rgb(198, 130, 201);
+  background: rgb(103, 17, 120);
   color: white;
   border-radius: 2rem;
   padding: .5rem;
