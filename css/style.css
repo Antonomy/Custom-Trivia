@@ -119,8 +119,6 @@ div {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-content: center;
-  align-items: center;
   position: absolute;
   width: 50%;
   height: 50%;
@@ -128,7 +126,6 @@ div {
   color: purple;
   border-radius: 2rem;
   padding: 1rem;
-
 }
 
 #triviaContainer {
@@ -146,6 +143,12 @@ div {
   border-radius: 2rem;
   padding: 1.5rem 1.5rem 1.5rem 3rem;
   text-align: left;
+  box-shadow: 0 0 .2rem #fff,
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe, 
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
 }
 
 #answersList>.revealWrongAnswer {
