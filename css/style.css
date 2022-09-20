@@ -23,6 +23,10 @@ main {
   border-radius: 1rem;
 }
 
+h2 {
+  margin-top: 1rem;
+}
+
 #header {
   text-align: center;
   color: #fff;
@@ -121,8 +125,8 @@ div {
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 50%;
-  height: 50%;
+  width: 40%;
+  height: 40%;
   background: rgba(255, 255, 255, 0.80);
   color: purple;
   border-radius: 2rem;
@@ -171,11 +175,30 @@ div {
   background-color: rgb(103, 17, 120);
 }
 
+.highlight:hover{
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe, 
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
+}
+
 .nextQuestionButton {
-  background-color: grey;
+  background: rgb(103, 17, 120);
   margin: .35rem;
   border-radius: 2rem;
   padding: .75rem;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe, 
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+  
 }
 
 li {

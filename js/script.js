@@ -18,109 +18,253 @@ class Question {
 }
 // Instantiate Questions
 let r1question1 = new Question(
-    "r1Question 1?",
-    "r1Q1CorrectAnswer",
-    "r1Q1Wrong Answer 1",
-    "r1Q1Wrong Answer 2",
-    "r1Q1Wrong Answer 3"
+    "What is the only food that cannot go bad?",
+    "Honey",
+    "Peanut Butter",
+    "Canned Tuna",
+    "Dark Chocolate"
 )
 let r1question2 = new Question(
-    "r1Question 2?",
-    "r1Q2CorrectAnswer",
-    "r1Q2Wrong Answer 1",
-    "r1Q2Wrong Answer 2",
-    "r1Q2Wrong Answer 3"
+    "What 90s boy band member bought Myspace in 2011?",
+    "Justin Timberlake",
+    "Nick Lachey",
+    "AJ McLean",
+    "Shawn Stockman"
 )
 let r1question3 = new Question(
-    "r1Question 3?",
-    "r1Q3CorrectAnswer",
-    "r1Q3Wrong Answer 1",
-    "r1Q3Wrong Answer 2",
-    "r1Q3Wrong Answer 3"
+    "What is the most visited tourist attraction in the world?",
+    "Eiffel Tower",
+    "Statue of Liberty",
+    "Great Wall of China",
+    "Colosseum"
 )
 let r1question4 = new Question(
-    "r1Question 4?",
-    "r1Q4CorrectAnswer",
-    "r1Q4Wrong Answer 1",
-    "r1Q4Wrong Answer 2",
-    "r1Q4Wrong Answer 3"
+    "What is the heaviest organ in the human body?",
+    "Liver",
+    "Brain",
+    "Skin",
+    "Heart"
+)
+let r1question5 = new Question(
+    "Where is recognized as the location of the hottest temperature ever recorded on Earth?",
+    "Death Valley, California",
+    "Mitribah, Kuwait",
+    "Yuma, Arizona",
+    "Key West, Florida"
+)
+let r1question6 = new Question(
+    "What type of food holds the world record for being the most stolen around the globe?",
+    "Cheese",
+    "Coffee",
+    "Chocolate",
+    "Wagyu beef"
+)
+let r1question7 = new Question(
+    "What element does the chemical symbol Au stand for?",
+    "Gold",
+    "Silver",
+    "Magnesium",
+    "Salt"
+)
+let r1question8 = new Question(
+    "What is the highest-grossing Broadway show of all time?",
+    "The Lion King",
+    "Wicked",
+    "Hamilton",
+    "Rent"
+)
+let r1question9 = new Question(
+    "On average, how many seeds are located on the outside of a strawberry?",
+    "200",
+    "100",
+    "400",
+    "500"
+)
+let r1question10 = new Question(
+    "Which fast food restaurant has the largest number of retail locations in the world?",
+    "Subway",
+    "Chipotle",
+    "McDonalds",
+    "Jack in the Box"
 )
 let r2question1 = new Question(
-    "r2Question 1?",
-    "r2Q1CorrectAnswer",
-    "r2Q1Wrong Answer 1",
-    "r2Q1Wrong Answer 2",
-    "r2Q1Wrong Answer 3"
+    "Who made the third most 3-pointers in the Playoffs in NBA history?",
+    "Lebron James",
+    "Kevin Durant",
+    "Kyle Korver",
+    "Kobe Bryant"
 )
 let r2question2 = new Question(
-    "r2Question 2?",
-    "r2Q2CorrectAnswer",
-    "r2Q2Wrong Answer 1",
-    "r2Q2Wrong Answer 2",
-    "r2Q2Wrong Answer 3"
+    "Which US city is the sunniest major city and sees more than 320 sunny days each year?",
+    "Phoenix",
+    "Miami",
+    "San Francisco",
+    "Austin"
 )
 let r2question3 = new Question(
-    "r2Question 3?",
-    "r2Q3CorrectAnswer",
-    "r2Q3Wrong Answer 1",
-    "r2Q3Wrong Answer 2",
-    "r2Q3Wrong Answer 3"
+    "What is the oldest soft drink in the United States?",
+    "Dr. Pepper",
+    "Coca Cola",
+    "Pepsi",
+    "Canada Dry Ginger Ale"
 )
 let r2question4 = new Question(
-    "r2Question 4?",
-    "r2Q4CorrectAnswer",
-    "r2Q4Wrong Answer 1",
-    "r2Q4Wrong Answer 2",
-    "r2Q4Wrong Answer 3"
+    "In what country do more than half of people believe in elves?",
+    "Iceland",
+    "Holland",
+    "Russia",
+    "Norway"
+)
+let r2question5 = new Question(
+    "What is the name of the coffee shop in the sitcom Friends?",
+    "Central Perk",
+    "Java Park",
+    "Central Park Coffee",
+    "Central Park Roastery"
+)
+let r2question6 = new Question(
+    "Which pop star burnt down her home gym with candles?",
+    "Britney Spears",
+    "Zendaya",
+    "Lady Gaga",
+    "Kim Kardashian"
+)
+let r2question7 = new Question(
+    "What is the highest-grossing video game franchise to date?",
+    "Pokemon",
+    "Mario",
+    "Call of Duty",
+    "Street Fighter"
+)
+let r2question8 = new Question(
+    "“Cirque du Soleil” started in what country?",
+    "Canada",
+    "USA",
+    "France",
+    "Russia"
+)
+let r2question9 = new Question(
+    "Which country’s national animal is a unicorn?",
+    "Scotland",
+    "Denmark",
+    "New Zealand",
+    "France"
+)
+let r2question10 = new Question(
+    "What is the main ingredient in a falafel?",
+    "Chickpea",
+    "Lentil",
+    "Broccoli",
+    "Split pea"
 )
 let r3question1 = new Question(
-    "r3Question 1?",
-    "r3Q1CorrectAnswer",
-    "r3Q1Wrong Answer 1",
-    "r3Q1Wrong Answer 2",
-    "r3Q1Wrong Answer 3"
+    "What is yellowtail fish called in Japanese??",
+    "Hamachi",
+    "Ahi",
+    "Ikura",
+    "Maguro"
 )
 let r3question2 = new Question(
-    "r3Question 2?",
-    "r3Q2CorrectAnswer",
-    "r3Q2Wrong Answer 1",
-    "r3Q2Wrong Answer 2",
-    "r3Q2Wrong Answer 3"
+    "What sport has been played on the moon?",
+    "Golf",
+    "Frisbee",
+    "Soccer",
+    "Bocce ball"
 )
 let r3question3 = new Question(
-    "r3Question 3?",
-    "r3Q3CorrectAnswer",
-    "r3Q3Wrong Answer 1",
-    "r3Q3Wrong Answer 2",
-    "r3Q3Wrong Answer 3"
+    "What was the first cash crop in America?",
+    "Tobacco",
+    "Corn",
+    "Sugar Cane",
+    "Grapes"
 )
 let r3question4 = new Question(
-    "r3Question 4?",
-    "r3Q4CorrectAnswer",
-    "r3Q4Wrong Answer 1",
-    "r3Q4Wrong Answer 2",
-    "r3Q4Wrong Answer 3"
+    "Mycology is the scientific study of what?",
+    "Fungi",
+    "Flowers",
+    "Cancer",
+    "Blood"
+)
+let r3question5 = new Question(
+    "What animal is the closest living relative of a human?",
+    "Bonobos",
+    "Gorillas",
+    "Monkeys",
+    "Homo sapiens"
+)
+let r3question6 = new Question(
+    "What does the meaning of the word “zodiac” in Ancient Greek?",
+    "Circle of animals",
+    "Circle of personalities",
+    "Circle of stars",
+    "Circle of futures"
+)
+let r3question7 = new Question(
+    "The first vaccine was for which disease?",
+    "Smallpox",
+    "Chickenpox",
+    "Polio",
+    "Measles"
+)
+let r3question8 = new Question(
+    "Which cereal grain is the most commonly used in beer?",
+    "Barley",
+    "Hops",
+    "Wheat",
+    "Rice"
+)
+let r3question9 = new Question(
+    "What country are the Galapagos Islands located in?",
+    "Ecuador",
+    "Brazil",
+    "Belize",
+    "Colombia"
+)
+let r3question10 = new Question(
+    "Pupusas are from what country?",
+    "El Salvador",
+    "Mexico",
+    "Brazil",
+    "Poland"
 )
 //Question List
 let round1QuestionArray = [
     r1question1,
     r1question2,
     r1question3,
-    r1question4
+    r1question4,
+    r1question5,
+    r1question6,
+    r1question7,
+    r1question8,
+    r1question9,
+    r1question10
 ]
 
 let round2questionArray = [
     r2question1,
     r2question2,
     r2question3,
-    r2question4
+    r2question4,
+    r2question5,
+    r2question6,
+    r2question7,
+    r2question8,
+    r2question9,
+    r2question10
 ]
 
 let round3questionArray = [
     r3question1,
     r3question2,
     r3question3,
-    r3question4
+    r3question4,
+    r3question5,
+    r3question6,
+    r3question7,
+    r3question8,
+    r3question9,
+    r3question10
 ]
 
 let roundsArray = [round1QuestionArray, round2questionArray, round3questionArray]
@@ -166,6 +310,8 @@ function closeGameStartModal() {
     document.getElementById('team2Name').textContent = `${customTeam2Name}: `
     //Store customCountdown
     customCountdown = document.getElementById('customCountdown').value
+    //Update Rules countdown information
+    document.getElementById('rulesCountdown').textContent = `${customCountdown}`
     team1 = new Team(customTeam1Name)
     team2 = new Team(customTeam2Name)
     teamArray.push(team1)
@@ -188,7 +334,7 @@ function correctAnswerChosen() {
     document.getElementById('nextQuestionButton').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('correctAnswerModal').style.display = 'none'
-    }, 1000)
+    }, 500)
     updateScoreboard(true)
     revealAnswers()
     pauseCountdown()
@@ -198,7 +344,7 @@ function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('wrongAnswerModal').style.display = 'none'
-    }, 1000)
+    }, 500)
     document.getElementById('nextQuestionButton').style.display = 'flex'
     updateScoreboard(false)
     revealAnswers()
@@ -243,6 +389,10 @@ function revealAnswers() {
     document.getElementById('wrongAnswer1').classList.add('revealWrongAnswer')
     document.getElementById('wrongAnswer2').classList.add('revealWrongAnswer')
     document.getElementById('wrongAnswer3').classList.add('revealWrongAnswer')
+    document.getElementById('correctAnswer').classList.remove('highlight')
+    document.getElementById('wrongAnswer1').classList.remove('highlight')
+    document.getElementById('wrongAnswer2').classList.remove('highlight')
+    document.getElementById('wrongAnswer3').classList.remove('highlight')
 }
 
 function hideAnswers() {
@@ -250,6 +400,10 @@ function hideAnswers() {
     document.getElementById('wrongAnswer1').classList.remove('revealWrongAnswer')
     document.getElementById('wrongAnswer2').classList.remove('revealWrongAnswer')
     document.getElementById('wrongAnswer3').classList.remove('revealWrongAnswer')
+    document.getElementById('correctAnswer').classList.add('highlight')
+    document.getElementById('wrongAnswer1').classList.add('highlight')
+    document.getElementById('wrongAnswer2').classList.add('highlight')
+    document.getElementById('wrongAnswer3').classList.add('highlight')
 }
 
 function randomizeAnswers() {

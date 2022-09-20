@@ -38,33 +38,35 @@
         <!-- Game Start Modal -->
         <div id="gameStartModal" class="modal">
             <h2>Welcome to Custom Trivia!</h2>
-            <p>Where you get to play your way and let your colors show.</p>
+            <p>Where you get to play your way.</p>
             <h2>Directions</h2>
             <p>Enter how you would like to play below</p>
             <div id="customizationContainer">
                 <h2>Customizations</h2>
                 <label for="customGameName">Name Your Game:</label>
                 <input type="text" id="customGameName" placeholder="Name your Game: " value="Trivia Night"><br>
-                <label for="customTeam1Name">Team 1:</label>
+                <label for="customTeam1Name">Team 1 Name:</label>
                 <input type="text" id="customTeam1Name" placeholder="Team 1" value="Team 1"><br>
-                <label for="customTeam2Name">Team 2:</label>
+                <label for="customTeam2Name">Team 2 Name:</label>
                 <input type="text" id="customTeam2Name" placeholder="Team 2" value="Team 2"><br>
-                <label for="customCountdown">Countdown Timer:</label>
+                <label for="customCountdown">Question Countdown Timer (seconds):</label>
                 <input type="number" id="customCountdown" placeholder="30" value="30">
             </div>
             <button id="closeGameStartModalButton">Start!</button>
         </div>
         <!-- Rules Modal -->
         <div id="rulesModal" class="modal" style="display: none">
-            <h2>Rules Modal</h2>
+            <h2>Rules</h2>
             <ul>
-                <li>You have 30 seconds to answer the questions</li>
+                <li>There are 3 rounds to a game.</li>
+                <li>You have <span id="rulesCountdown"></span> seconds to answer each question</li>
+                
             </ul>
             <button id="closeRulesModalButton">Close</button>
         </div>
         <!-- Pause Modal -->
         <div id="pauseModal" class="modal" style="display: none">
-            <h2>Pause Modal</h2>
+            <h2>Pause</h2>
             <button id="closePauseModalButton">Close</button>
         </div>
         <!-- Next Round Modal -->
@@ -96,12 +98,12 @@
             <!-- Answers -->
             <div id="answersContainer">
                 <ul id="answersList">
-                    <li id="correctAnswer" class="possibleAnswer"></li>
-                    <li id="wrongAnswer1" class="possibleAnswer"></li>
-                    <li id="wrongAnswer2" class="possibleAnswer"></li>
-                    <li id="wrongAnswer3" class="possibleAnswer"></li>
+                    <li id="correctAnswer" class="possibleAnswer highlight"></li>
+                    <li id="wrongAnswer1" class="possibleAnswer highlight"></li>
+                    <li id="wrongAnswer2" class="possibleAnswer highlight"></li>
+                    <li id="wrongAnswer3" class="possibleAnswer highlight"></li>
                 </ul>
-                <li id="nextQuestionButton" class="nextQuestionButton" style="display: none">Next Question</li>
+                <li id="nextQuestionButton" class="nextQuestionButton" style="display: none">N E X T &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Q U E S T I O N</li>
             </div>
         </div>
     </main>
