@@ -128,7 +128,7 @@ div {
   position: absolute;
   width: 55%;
   height: 40%;
-  background: rgba(255, 255, 255, 0.90);
+  background: rgba(255, 255, 255, .95);
   color: purple;
   border-radius: 2rem;
   padding: 1rem;
@@ -136,7 +136,7 @@ div {
 }
 
 #correctAnswerModal {
-  background-color: rgba(148, 204, 148, .8);
+  background-color: rgba(148, 204, 148, .97);
   width: 50%;
   height: 25%;
   box-shadow: 0 0 .2rem #fff,
@@ -148,7 +148,7 @@ div {
 }
 
 #wrongAnswerModal {
-  background-color: rgba(213, 125, 125, .8);
+  background-color: rgba(213, 125, 125, .97);
   width: 50%;
   height: 30%;
   box-shadow: 0 0 .2rem #fff,
