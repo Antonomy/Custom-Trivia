@@ -133,6 +133,30 @@ div {
   padding: 1rem;
 }
 
+#correctAnswerModal {
+  background-color: rgba(148, 204, 148, .8);
+  width: 50%;
+  height: 25%;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
+}
+
+#wrongAnswerModal {
+  background-color: rgba(213, 125, 125, .8);
+  width: 50%;
+  height: 30%;
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
+}
+
 #triviaContainer {
   display: flex;
   flex-direction: column;
@@ -151,7 +175,7 @@ div {
   box-shadow: 0 0 .2rem #fff,
     0 0 .2rem #fff,
     0 0 2rem #bc13fe,
-    0 0 0.8rem #bc13fe, 
+    0 0 0.8rem #bc13fe,
     0 0 2.8rem #bc13fe,
     inset 0 0 1.3rem #bc13fe;
 }
@@ -169,19 +193,20 @@ div {
   margin: .35rem;
   border-radius: 2rem;
   padding: .75rem;
+  border: solid black ;
 }
 
 .possibleAnswer:hover {
   background-color: rgb(103, 17, 120);
 }
 
-.highlight:hover{
+.highlight:hover {
   box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe, 
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe;
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
 }
 
 .nextQuestionButton {
@@ -190,17 +215,19 @@ div {
   border-radius: 2rem;
   padding: .75rem;
   box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe, 
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe;
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
   display: flex;
   justify-content: center;
   align-content: space-between;
-  
+  margin-top: 2rem;
 }
-
+.nextQuestionButton:hover {
+  background: rgb(204, 107, 209);
+}
 li {
   list-style: none;
 }
@@ -214,4 +241,10 @@ button {
 
 button:hover {
   background: rgb(204, 107, 209);
+  box-shadow: 0 0 .2rem #fff,
+  0 0 .2rem #fff,
+  0 0 2rem #bc13fe,
+  0 0 0.8rem #bc13fe,
+  0 0 2.8rem #bc13fe,
+  inset 0 0 1.3rem #bc13fe;
 }

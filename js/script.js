@@ -334,7 +334,7 @@ function correctAnswerChosen() {
     document.getElementById('nextQuestionButton').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('correctAnswerModal').style.display = 'none'
-    }, 500)
+    }, 900)
     updateScoreboard(true)
     revealAnswers()
     pauseCountdown()
@@ -344,7 +344,7 @@ function wrongAnswerChosen() {
     document.getElementById('wrongAnswerModal').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('wrongAnswerModal').style.display = 'none'
-    }, 500)
+    }, 900)
     document.getElementById('nextQuestionButton').style.display = 'flex'
     updateScoreboard(false)
     revealAnswers()
