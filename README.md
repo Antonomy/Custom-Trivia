@@ -15,14 +15,12 @@ Technologies Used:
 Approach taken
 -Custom Trivia was built to be highly customizable. For example: the logic loops through the list of teams rather than being hardcoded to switch back and forth between two teams. This makes it easier to implement a future feature to include more than 2 teams
 
-Unsolved problems
--Timer Functionality
--Multiple Teams
--Multiple theme colors
 
 Future Updates:
--Ability to import questions with an Excel file
 -Backend
+-Ability to import questions with an Excel file
+-Ability have have up to 10 teams
+
 
 
 Credit and Gratitude:
