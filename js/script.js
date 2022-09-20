@@ -138,11 +138,11 @@ class Team {
 
 //Open Rules
 function openNavRules() {
-    document.getElementById('rulesModal').style.display = 'block'
+    document.getElementById('rulesModal').style.display = 'flex'
 }
 //Pause game - need to update to stop timer once timer is added
 function pauseGame() {
-    document.getElementById('pauseModal').style.display = 'block'
+    document.getElementById('pauseModal').style.display = 'flex'
     pauseCountdown()
 }
 //Refresh Page - Need to update to store info and clear scores
@@ -184,8 +184,8 @@ function closePauseModal() {
 //Answer Grading
 function correctAnswerChosen() {
     teamArray[0].score++
-    document.getElementById('correctAnswerModal').style.display = 'block'
-    document.getElementById('nextQuestionButton').style.display = 'block'
+    document.getElementById('correctAnswerModal').style.display = 'flex'
+    document.getElementById('nextQuestionButton').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('correctAnswerModal').style.display = 'none'
     }, 1000)
@@ -195,11 +195,11 @@ function correctAnswerChosen() {
     makeAnswersUnclickable()
 }
 function wrongAnswerChosen() {
-    document.getElementById('wrongAnswerModal').style.display = 'block'
+    document.getElementById('wrongAnswerModal').style.display = 'flex'
     setTimeout(() => {
         document.getElementById('wrongAnswerModal').style.display = 'none'
     }, 1000)
-    document.getElementById('nextQuestionButton').style.display = 'block'
+    document.getElementById('nextQuestionButton').style.display = 'flex'
     updateScoreboard(false)
     revealAnswers()
     pauseCountdown()
@@ -235,7 +235,7 @@ function closeNextRoundModal() {
 }
 //Game End Modal
 function openGameEndModal() {
-    document.getElementById('gameEndModal').style.display = 'block'
+    document.getElementById('gameEndModal').style.display = 'flex'
 }
 
 function revealAnswers() {
@@ -284,7 +284,7 @@ function countDown() {
         updateScoreboard(false)
         revealAnswers()
         makeAnswersUnclickable()
-        document.getElementById('nextQuestionButton').style.display = 'block'
+        document.getElementById('nextQuestionButton').style.display = 'flex'
         document.getElementById('timer').textContent = "You're out of time"
     }
 }
@@ -320,7 +320,7 @@ function updateScoreboard(correct) {
         currentRound++
         questionArray = roundsArray[0]
         document.getElementById('nextQuestionButton').style.display = 'none'
-        document.getElementById('nextRoundModal').style.display = 'block'
+        document.getElementById('nextRoundModal').style.display = 'flex'
         document.getElementById('nextRoundAnnouncement').textContent = `Round ${currentRound} of 3.`
         //If there are no more questions and there no more rounds
     } else if (questionArray.length === 0 && roundsArray.length === 1) {
