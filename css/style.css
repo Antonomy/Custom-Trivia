@@ -11,6 +11,7 @@ body {
   height: 100vh;
   width: 100vw;
   align-items: center;
+  font-family: 'Hammersmith One', sans-serif;
 }
 
 main {
@@ -125,12 +126,13 @@ div {
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 40%;
+  width: 55%;
   height: 40%;
-  background: rgba(255, 255, 255, 0.80);
+  background: rgba(255, 255, 255, 0.90);
   color: purple;
   border-radius: 2rem;
   padding: 1rem;
+
 }
 
 #correctAnswerModal {
@@ -138,11 +140,11 @@ div {
   width: 50%;
   height: 25%;
   box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe,
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe;
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
 }
 
 #wrongAnswerModal {
@@ -150,11 +152,11 @@ div {
   width: 50%;
   height: 30%;
   box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe,
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe;
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
 }
 
 #triviaContainer {
@@ -193,7 +195,7 @@ div {
   margin: .35rem;
   border-radius: 2rem;
   padding: .75rem;
-  border: solid black ;
+  border: solid black;
 }
 
 .possibleAnswer:hover {
@@ -225,9 +227,11 @@ div {
   align-content: space-between;
   margin-top: 2rem;
 }
+
 .nextQuestionButton:hover {
   background: rgb(204, 107, 209);
 }
+
 li {
   list-style: none;
 }
@@ -242,9 +246,9 @@ button {
 button:hover {
   background: rgb(204, 107, 209);
   box-shadow: 0 0 .2rem #fff,
-  0 0 .2rem #fff,
-  0 0 2rem #bc13fe,
-  0 0 0.8rem #bc13fe,
-  0 0 2.8rem #bc13fe,
-  inset 0 0 1.3rem #bc13fe;
+    0 0 .2rem #fff,
+    0 0 2rem #bc13fe,
+    0 0 0.8rem #bc13fe,
+    0 0 2.8rem #bc13fe,
+    inset 0 0 1.3rem #bc13fe;
 }
